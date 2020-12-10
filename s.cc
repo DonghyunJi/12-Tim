@@ -3,10 +3,21 @@
 
 using namespace std;
 
-DAC() {}
+class Output {
+public:
+	queue<int>data;	//queue ouput data
+	double input;	//save input voltage
+	int check;		//used to check which digit
+};
 
-Comparator() {}
+DAC(){}
 
-SAR_logic() {}
+bool comparator(){}
 
-int main() {}
+SAR_logic(){}
+
+int main(){
+
+}
+
+
