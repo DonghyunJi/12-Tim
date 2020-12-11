@@ -6,10 +6,10 @@
 using namespace std;
 
 class Output {
-public:
-	queue<int>data;	
-	double input;	
-	int check;	
+	public:
+		queue<int>data;
+		double input;
+		int check;
 };
 
 double DAC(Output output) {
@@ -53,28 +53,28 @@ Output SAR_logic(Output output) {
 	return output;
 }
 
-int main(){
+int main() {
 	double x;
 	int i;
+
 	Output output;
-	
-	cout << "Input Volatage : ";
+
+	cout << "Input Volatage(0V ~ 10V) : ";
 	cin >> x;
-	
 	output.check = 0;
 	output.input = x;
-	
+
 	while (output.check != 8) {
+		cout << "Converting . . . " << endl;
 		output = SAR_logic(output);
 	}
-	cout << "input : " << output.input << " output : ";
+	cout << "-----------------------Conversion Success-----------------------" << endl;
+	cout << "    Analog input : " << output.input << " V -> Digital output : ";
 	for (i = 0; i < output.check; i++) {
 		cout << output.data.front() << " ";
 		output.data.pop();
 	}
 	cout << endl;
-
+	cout << "----------------------------------------------------------------" << endl;
 	return 0;
 }
-
-
